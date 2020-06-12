@@ -112,9 +112,9 @@ onnxtest.exe
 ```
 
 ## 5. Test Environment
-Ubuntu 18.04 / Windows 10 1909
-OpenVINO 2020.2
-ONNX runtime 1.3.0
+- Ubuntu 18.04 / Windows 10 1909  
+- OpenVINO 2020.2  
+- ONNX runtime 1.3.0  
 
 ## See Also  
 * [Using Open Model Zoo demos](../../README.md)  
