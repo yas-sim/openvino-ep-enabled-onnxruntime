@@ -75,7 +75,7 @@ Windows
 ```sh
 # Download Resnet-50 model and class label text
 bitsadmin /transfer download https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-7.onnx %CD%\resnet50-v1-7.onnx
-!bitsadmin /transfer download https://raw.githubusercontent.com/HoldenCaulfieldRye/caffe/master/data/ilsvrc12/synset_words.txt %CD%\synset_words.txt
+bitsadmin /transfer download https://raw.githubusercontent.com/HoldenCaulfieldRye/caffe/master/data/ilsvrc12/synset_words.txt %CD%\synset_words.txt
 
 #Build C++ sample app
 mkdir build

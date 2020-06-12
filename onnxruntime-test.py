@@ -4,9 +4,8 @@ import cv2
 import numpy as np
 import onnxruntime
 
-onnxruntime.get_all_providers()
-
-onnxruntime.get_device()
+print(onnxruntime.get_all_providers())
+print(onnxruntime.get_device())
 
 label = open('synset_words.txt').readlines()
 
