@@ -17,6 +17,7 @@ The performance is OpenVINO >> ONNX runtime (C++) > ONNX runtime (Python) in gen
 
 The sample code are simple CNN image classification program and the DL model is ResNet-50.  
 
+----
 
 ONNX runtimeはマイクロソフトが開発、保守しているディープラーニング推論ライブラリです。  
 <a href=https://github.com/microsoft/onnxruntime>'microsoft/onnxruntime' on GitHub</a>  
