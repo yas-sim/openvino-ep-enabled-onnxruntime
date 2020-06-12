@@ -17,6 +17,23 @@ The performance is OpenVINO >> ONNX runtime (C++) > ONNX runtime (Python) in gen
 
 The sample code are simple CNN image classification program and the DL model is ResNet-50.  
 
+
+ONNX runtimeはマイクロソフトが開発、保守しているディープラーニング推論ライブラリです。  
+<a href=https://github.com/microsoft/onnxruntime>'microsoft/onnxruntime' on GitHub</a>  
+
+ONNX runtimeはサポートする数多くのシステム上でONNXフォーマットのDLモデルをロードし実行することが可能です。多くのプロセッサ、OS、プログラミング言語をサポートします。  
+またONNX runtimeは複数の`Execution provider(EP)`と呼ばれるバックエンド推論ライブラリをサポートします。**Intel OpenVINO toolkit**, Intel DNNL, Intel nGraph, nVIDIA TensorRT, DirectML, ARM compute library, Android neural networks APIなど数多くのEPをサポートしています。  
+
+しかしながら提供されているビルド済みバイナリパッケージではOpenVINO EPがイネーブルされていません (v1.3.0)。
+
+そこで、このプロジェクトではONNX runtimeをソースコードからビルドし、OpenVINO EPをイネーブルしてみました。  
+
+**このOpenVINO EPにより、(MOでIRに変換することなく)プログラム内で直接ONNX DLモデルを読み込み、OpenVINOのように高速に効率よく推論を行うことが可能になります。**  
+パフォーマンスはおおむねOpenVINO >> ONNX runtime (C++) > ONNX runtime (Python)の順になるようです。私のテスト結果によると、パフォーマンスの差は2ms~10ms程度でした。(HW:Core i7-6770HQ)  
+
+サンプルプログラムは簡単な画像分類(CNN)のプログラムでResnet-50を使用しています。
+
+
 ## 2. Prerequisites
 - **OpenVINO 2020.2**
   - ONNX runtime v1.3.0 is compatible with OpenVINO 2020.2.  
@@ -102,3 +119,4 @@ ONNX runtime 1.3.0
 * [Using Open Model Zoo demos](../../README.md)  
 * [Model Optimizer](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html)  
 * [Model Downloader](../../../tools/downloader/README.md)  
+* [ONNX runtime](https://github.com/microsoft/onnxruntime)
