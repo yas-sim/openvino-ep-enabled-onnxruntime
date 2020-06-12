@@ -4,7 +4,7 @@
 ONNX runtime is a deep learning inferencing library developed and maintained by Microsoft.  
 <a href=https://github.com/microsoft/onnxruntime>'microsoft/onnxruntime' on GitHub</a>  
 
-ONNX runtime can load the ONNX format DL models and run it on wide variety of systems. It supports multiple processors, OSes, and programming languages.  
+ONNX runtime can load the ONNX format DL models and run it on a wide variety of systems. It supports multiple processors, OSes, and programming languages.  
 Also, ONNX runtime supports multiple `execution providers(EP)` which is the backend inferencing engine library. ONNX runtime supports **Intel OpenVINO toolkit**, Intel DNNL, Intel nGraph, nVIDIA TensorRT, DirectML, ARM compute library, Android neural networks API, and many more EPs.  
 
 However, Intel OpenVINO EP is not enabled in the prebuilt binary distribution of ONNX runtime (v1.3.0).  
@@ -12,11 +12,11 @@ However, Intel OpenVINO EP is not enabled in the prebuilt binary distribution of
 In this project, I built the ONNX runtime from the source code and enabled the OpenVINO execution provider.  
 The project includes the steps to build and install ONNX runtime and a simple sample code to try ONNX runtime.  
 
-**You can load the ONNX DL model directry in your program and run it as fast and efficient as OpenVINO with this OpenVINO EP.**  
+**You can load the ONNX DL model directly in your program and run it as fast and efficient as OpenVINO with this OpenVINO EP.**  
 Also, OpenVINO EP **supports various Intel processors and accelerators** such as CPU_FP32, GPU_FP32, GPU_FP16, MYRIAD_FP16, VAD-M_FP16, and VAD-F_FP16 (VAD = Intel Vision Accelerator Design = HDDL).  
 The performance is OpenVINO >> ONNX runtime (C++) > ONNX runtime (Python) in general. The performance difference between OpenVINO and ONNX runtime is around 2ms to 10ms based on my test result (HW: Core i7-6770HQ).  
 
-The sample code are simple CNN image classification program and the DL model is ResNet-50.  
+The sample code are simple CNN image classification programs and the DL model is ResNet-50.  
 
 ----
 
