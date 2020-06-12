@@ -65,6 +65,7 @@ make
 cd ..
 
 #Run
+cp $INTEL_OPENVINO_DIR/deployment_tools/demo/car.png .
 cp build/onnxtest .
 cp ../onnxruntime/build/Linux/Release/libonnxruntime.so .
 cp ../onnxruntime/build/Linux/Release/libcustom_op_library.so .
@@ -85,6 +86,7 @@ msbuild onnxtest.sln /p:Configuration=Release
 cd ..
 
 #Run
+copy "%INTEL_OPENVINO_DIR%\deployment_tools\demo\car.png" .
 copy build\Release\onnxtest.exe .
 copy ..\onnxruntime\build\Windows\Release\Release\onnxruntime.dll .
 copy ..\onnxruntime\build\Windows\Release\Release\custom_op_library.dll .
