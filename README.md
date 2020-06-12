@@ -13,6 +13,7 @@ In this project, I built the ONNX runtime from the source code and enabled the O
 The project includes the steps to build and install ONNX runtime and a simple sample code to try ONNX runtime.  
 
 **You can load the ONNX DL model directry in your program and run it as fast and efficient as OpenVINO with this OpenVINO EP.**  
+Also, OpenVINO EP **supports various Intel processors and accelerators** such as CPU_FP32, GPU_FP32, GPU_FP16, MYRIAD_FP16, VAD-M_FP16, and VAD-F_FP16 (VAD = Intel Vision Accelerator Design = HDDL).  
 The performance is OpenVINO >> ONNX runtime (C++) > ONNX runtime (Python) in general. The performance difference between OpenVINO and ONNX runtime is around 2ms to 10ms based on my test result (HW: Core i7-6770HQ).  
 
 The sample code are simple CNN image classification program and the DL model is ResNet-50.  
@@ -30,6 +31,7 @@ ONNX runtimeはサポートする数多くのシステム上でONNXフォーマ�
 そこで、このプロジェクトではONNX runtimeをソースコードからビルドし、OpenVINO EPをイネーブルしてみました。  
 
 **このOpenVINO EPにより、(MOでIRに変換することなく)プログラム内で直接ONNX DLモデルを読み込み、OpenVINOのように高速に効率よく推論を行うことが可能になります。**  
+また、OpenVINO EPを使用することにより**各種インテルプロセッサやアクセラレータも利用可能**となります。(CPU_FP32, GPU_FP32, GPU_FP16, MYRIAD_FP16, VAD-M_FP16, and VAD-F_FP16 (VAD = Intel Vision Accelerator Design = HDDL))  
 パフォーマンスはおおむねOpenVINO >> ONNX runtime (C++) > ONNX runtime (Python)の順になるようです。私のテスト結果によると、パフォーマンスの差は2ms~10ms程度でした。(HW:Core i7-6770HQ)  
 
 サンプルプログラムは簡単な画像分類(CNN)のプログラムでResnet-50を使用しています。
