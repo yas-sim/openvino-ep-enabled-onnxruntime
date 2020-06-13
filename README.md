@@ -71,7 +71,7 @@ pip install .\build\Windows\Release\Release\dist\onnxruntime_openvino-1.3.0-cp36
 
 ## 4. Build and Run the sample applications (C++ and Python)
 
-Linux
+Linux (C++)
 ```sh
 # Download Resnet-50 model and class label text
 wget https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-7.onnx
@@ -92,7 +92,7 @@ cp ../onnxruntime/build/Linux/Release/libcustom_op_library.so .
 ./onnxtest
 ```
 
-Windows
+Windows (C++)
 ```sh
 # Download Resnet-50 model and class label text
 bitsadmin /transfer download https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-7.onnx %CD%\resnet50-v1-7.onnx
@@ -111,6 +111,18 @@ copy build\Release\onnxtest.exe .
 copy ..\onnxruntime\build\Windows\Release\Release\onnxruntime.dll .
 copy ..\onnxruntime\build\Windows\Release\Release\custom_op_library.dll .
 onnxtest.exe
+```
+
+Linux (Python)
+```sh
+cp $INTEL_OPENVINO_DIR/deployment_tools/demo/car.png .
+python3 onnxruntime-test.py
+```
+
+Windows (Python)
+```sh
+cp $INTEL_OPENVINO_DIR/deployment_tools/demo/car.png .
+python onnxruntime-test.py
 ```
 
 ## 5. Test Environment
