@@ -160,15 +160,13 @@ int main(int argc, char* argv[]) {
 	Ort::Value input_tensor = Ort::Value::CreateTensor<float>(memory_info, input_tensor_values.data(), input_tensor_size, input_node_dims.data(), 4);
 	assert(input_tensor.IsTensor());
 
-	// score model & input tensor, get back output tensor
-	auto output_tensors = session.Run(Ort::RunOptions{nullptr}, input_node_names.data(), &input_tensor, 1, output_node_names.data(), 1);
-
 	// Benchmarking (sync, latency)
+	class std::vector<struct Ort::Value,class std::allocator<struct Ort::Value>> output_tensors;
 	std::cout<<"Start inferencing"<<std::endl;
 	auto startTime = std::chrono::system_clock::now();
 	size_t niter = 100;
 	for(size_t i=0; i<niter; i++) {
-		auto output_tensors = session.Run(Ort::RunOptions{nullptr}, input_node_names.data(), &input_tensor, 1, output_node_names.data(), 1);
+		output_tensors = session.Run(Ort::RunOptions{nullptr}, input_node_names.data(), &input_tensor, 1, output_node_names.data(), 1);
 	}
 	auto endTime = std::chrono::system_clock::now();
 	auto execTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();

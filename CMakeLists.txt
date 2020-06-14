@@ -27,6 +27,6 @@ endif(UNIX)
 include_directories( ${InferenceEngine_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} ${ONNXRT_INC_DIR} )
 link_directories( ${ONNXRT_LIB_DIR} )
 
-add_executable( ${TARGET_NAME} main.cpp )    # list of source file(s)
+add_executable( ${TARGET_NAME} onnxruntime-test.cpp )    # list of source file(s)
 set_target_properties(${TARGET_NAME} PROPERTIES "CMAKE_CXX_FLAGS" "${CMAKE_CXX_FLAGS}")
 target_link_libraries(${TARGET_NAME} ${InferenceEngine_LIBRARIES} ${OpenCV_LIBS} ${ONNXRT_LIBS})
