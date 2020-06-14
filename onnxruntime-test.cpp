@@ -161,7 +161,7 @@ int main(int argc, char* argv[]) {
 	assert(input_tensor.IsTensor());
 
 	// Benchmarking (sync, latency)
-	class std::vector<struct Ort::Value,class std::allocator<struct Ort::Value>> output_tensors;
+	class std::vector<struct Ort::Value,class std::allocator<struct Ort::Value> > output_tensors;
 	std::cout<<"Start inferencing"<<std::endl;
 	auto startTime = std::chrono::system_clock::now();
 	size_t niter = 100;
