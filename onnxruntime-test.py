@@ -1,8 +1,23 @@
+import sys
 import time
+import argparse
 
 import cv2
 import numpy as np
 import onnxruntime
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-m', type=str, required=False, default='resnet18-v2-7.onnx', help='ONNX model file name')
+parser.add_argument('-d', type=str, required=False, default='CPU_FP32', help='OpenVINO device name')
+args = parser.parse_args()
+
+print('model: ', args.m)
+print('device: ', args.d)
+
+available_devices = ['CPU_FP32', 'GPU_FP32', 'GPU_FP16', 'MYRIAD_FP16', 'VAD-M_FP16', 'VAD-F_FP16']
+if not args.d in available_devices:
+    print('Device must be one of followings : ', available_devices)
+    sys.exit(0)
 
 print(onnxruntime.get_all_providers())
 print(onnxruntime.get_device())
@@ -13,9 +28,9 @@ label = open('synset_words.txt').readlines()
 # VAD == Vision Accelerator Design == HDDL
 options = onnxruntime.SessionOptions()
 options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_DISABLE_ALL
-onnxruntime.capi._pybind_state.set_openvino_device("CPU_FP32")
+onnxruntime.capi._pybind_state.set_openvino_device(args.d)
 
-sess = onnxruntime.InferenceSession('resnet18-v2-7.onnx', options)
+sess = onnxruntime.InferenceSession(args.m, options)
 
 input_name = sess.get_inputs()[0].name
 print("Input name  :", input_name)

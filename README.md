@@ -116,15 +116,21 @@ onnxtest.exe
 ```
 
 ### Linux (Python)
+**Command options:**  
+`-d`: OpenVINO device name. Must be one of CPU_FP32, GPU_FP16, GPU_FP32, MYRIAD_FP16, VAD-M_FP16, VAD-F_FP16. (default: CPU_FP32)  
+`-m`: ONNX model file name (default: resnet18-v2-7.onnx)  
 ```sh
 cp $INTEL_OPENVINO_DIR/deployment_tools/demo/car.png .
-python3 onnxruntime-test.py
+python3 onnxruntime-test.py [-d device_name] [-m model_name]
 ```
 
 ### Windows (Python)
+**Command options:**  
+`-d`: OpenVINO device name. Must be one of CPU_FP32, GPU_FP16, GPU_FP32, MYRIAD_FP16, VAD-M_FP16, VAD-F_FP16. (default: CPU_FP32)  
+`-m`: ONNX model file name (default: resnet18-v2-7.onnx)  
 ```sh
 cp $INTEL_OPENVINO_DIR/deployment_tools/demo/car.png .
-python onnxruntime-test.py
+python3 onnxruntime-test.py [-d device_name] [-m model_name]
 ```
 
 ## 5. Test Environment
