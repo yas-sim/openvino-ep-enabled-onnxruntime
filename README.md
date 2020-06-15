@@ -45,7 +45,7 @@ ONNX runtimeはサポートする数多くのシステム上でONNXフォーマ�
 
 ## 3. Build and Install ONNX runtime
 
-**Note:** You should have either one of `onnxruntime` or `onnxruntime-openvino`. Is you have installed `onnxruntime` beforehand, please uninstall it before you install `onnxruntime-openvino`.  
+**Note:** You should have either one of `onnxruntime` or `onnxruntime-openvino`. If you have installed `onnxruntime` beforehand, please uninstall it before you install `onnxruntime-openvino`.  
 
 Linux
 ```sh
