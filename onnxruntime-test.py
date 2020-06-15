@@ -15,7 +15,7 @@ options = onnxruntime.SessionOptions()
 options.graph_optimization_level = onnxruntime.GraphOptimizationLevel.ORT_DISABLE_ALL
 onnxruntime.capi._pybind_state.set_openvino_device("CPU_FP32")
 
-sess = onnxruntime.InferenceSession('resnet50-v1-7.onnx', options)
+sess = onnxruntime.InferenceSession('resnet18-v2-7.onnx', options)
 
 input_name = sess.get_inputs()[0].name
 print("Input name  :", input_name)

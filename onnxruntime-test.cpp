@@ -60,9 +60,9 @@ int main(int argc, char* argv[]) {
 	//*************************************************************************
 	// create session and load model into memory
 #ifdef _WIN32
-	const wchar_t* model_path = L"resnet50-v1-7.onnx";
+	const wchar_t* model_path = L"resnet18-v2-7.onnx";
 #else
-	const char* model_path = "resnet50-v1-7.onnx";
+	const char* model_path = "resnet18-v2-7.onnx";
 #endif
 
 	printf("Using Onnxruntime C++ API\n");

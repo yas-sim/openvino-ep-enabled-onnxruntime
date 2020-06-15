@@ -73,8 +73,8 @@ pip install .\build\Windows\Release\Release\dist\onnxruntime_openvino-1.3.0-cp36
 
 ### Linux (C++)
 ```sh
-# Download Resnet-50 model and class label text
-wget https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-7.onnx
+# Download Resnet-18 model and class label text
+wget https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet18-v2-7.onnx
 wget https://raw.githubusercontent.com/HoldenCaulfieldRye/caffe/master/data/ilsvrc12/synset_words.txt
 
 #Build C++ sample app
@@ -94,8 +94,8 @@ cp ../onnxruntime/build/Linux/Release/libcustom_op_library.so .
 
 ### Windows (C++)
 ```sh
-# Download Resnet-50 model and class label text
-bitsadmin /transfer download https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-7.onnx %CD%\resnet50-v1-7.onnx
+# Download Resnet-18 model and class label text
+bitsadmin /transfer download https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet18-v2-7.onnx %CD%\resnet18-v2-7.onnx
 bitsadmin /transfer download https://raw.githubusercontent.com/HoldenCaulfieldRye/caffe/master/data/ilsvrc12/synset_words.txt %CD%\synset_words.txt
 
 #Build C++ sample app
